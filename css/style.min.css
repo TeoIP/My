@@ -165,6 +165,7 @@ select {
   margin-top: 50px;
   padding-bottom: 50px;
   position: relative;
+  height: 100vh;
 }
 .pro__information-photo {
   border-radius: 200px;
@@ -199,9 +200,23 @@ select {
     transform: translateX(0);
   }
 }
+.main__carousel {
+  background-color: #CFDDC8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__title {
+  font-family: IbarraRealNova;
+  font-size: 32px;
+  margin-top: 20px;
+  color: #366476;
+}
+
 .slider {
   width: 100%;
-  background-color: #CFDDC8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,6 +238,8 @@ select {
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 .slider__model {
@@ -231,6 +248,12 @@ select {
   max-height: 100%;
   display: none;
   animation: fade-out 2s;
+}
+.slider__next {
+  right: 2%;
+}
+.slider__prev {
+  left: 2%;
 }
 
 .active {
@@ -273,15 +296,119 @@ select {
   transition: all 0.2s ease-in;
 }
 
+.form {
+  position: relative;
+  background-color: #124559;
+}
+.form__container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container__words-title {
+  font-family: EBGaramond;
+  font-size: 32px;
+  color: #EFF6E0;
+}
+.container__words-title div {
+  margin-top: -17px;
+}
+.container__words-subtitle {
+  color: #84A3A1;
+  font-family: Montserrat;
+  font-size: 17px;
+}
+.container__main {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+}
+.container__main input {
+  border: 0;
+  margin: 10px 5px;
+  padding: 15px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0);
+}
+
+#message {
+  border: 0;
+  margin: 10px 5px;
+  padding: 20px;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 10px;
+  color: #000000;
+  resize: none;
+}
+
+#EmailSend {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  width: 100%;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+#EmailSend:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#EmailSend:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#EmailSend:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 @media (min-width: 276px) {
+  .pro__information-body {
+    flex-direction: column;
+  }
   .principal__buttons {
     font-size: 20px;
     margin: 0 24px;
     padding: 10px;
   }
   .pro__information-photo {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 290px;
+    max-height: 290px;
+    margin-bottom: 20px;
   }
   .pro__information-title {
     font-size: 27px;
@@ -290,17 +417,37 @@ select {
   .slider {
     padding: 0 10px;
   }
-  .slider__prev {
-    left: 5%;
+  .container__main {
+    width: 290px;
   }
-  .slider__next {
-    right: 5%;
+  .carousel__title {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .form__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container__words {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .container__words-title {
+    font-size: 22px;
   }
 }
 @media (min-width: 576px) {
+  .pro__information-body {
+    flex-direction: row;
+  }
   .pro__information-photo {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 250px;
+    max-height: 250px;
+    flex-direction: row;
   }
   .pro__information-title {
     font-size: 35px;
@@ -309,21 +456,36 @@ select {
   .slider {
     padding: 0 10px;
   }
+  .carousel__title {
+    font-size: 25px;
+    margin-top: 10px;
+  }
 }
 @media (min-width: 768px) {
   .pro__information-photo {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .carousel__title {
+    font-size: 28px;
+    margin-top: 10px;
   }
   .pro__information-title {
     font-size: 45px;
     margin-left: 15px;
   }
-  .slider__prev {
-    left: 5%;
+  .form__container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
-  .slider__next {
-    right: 5%;
+  .container__words {
+    display: block;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .container__words-title {
+    font-size: 32px;
   }
 }
 @media (min-width: 992px) {
@@ -331,18 +493,12 @@ select {
     font-size: 22px;
     margin: 0 32px;
   }
+  .carousel__title {
+    font-size: 30px;
+    margin-top: 10px;
+  }
   .slider {
     height: 800px;
-  }
-  .slider__box {
-    max-width: 800px;
-    max-height: 750px;
-  }
-  .slider__prev {
-    left: 22%;
-  }
-  .slider__next {
-    right: 22%;
   }
   .butons svg {
     width: 54px;
@@ -351,11 +507,15 @@ select {
 }
 @media (min-width: 1200px) {
   .slider {
-    height: 900px;
+    height: 700px;
   }
   .slider__box {
     max-width: 900px;
     max-height: 850px;
+  }
+  .carousel__title {
+    font-size: 32px;
+    margin-top: 10px;
   }
   .pro__information-photo {
     max-width: 400px;
@@ -377,12 +537,6 @@ select {
   }
   .slider {
     height: 1200px;
-  }
-  .slider__prev {
-    left: 28%;
-  }
-  .slider__next {
-    right: 28%;
   }
   .slider__box {
     max-width: 1200px;
