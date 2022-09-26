@@ -152,6 +152,7 @@ select {
   padding: 12px;
   position: relative;
   transition: all 500ms ease-out;
+  text-decoration: none;
 }
 
 #main {
@@ -289,10 +290,11 @@ select {
   transition: all 0.2s ease-in;
 }
 .butons svg {
-  fill: #cfddc8;
+  fill: #000000;
 }
 .butons:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0px 0px 4px #ffffff);
   transition: all 0.2s ease-in;
 }
 
@@ -394,6 +396,56 @@ select {
 #EmailSend:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+#footer {
+  background-color: #01161E;
+}
+
+.footer__container {
+  padding: 20px 10px;
+}
+
+.container__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.container__items-svg {
+  position: relative;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__items-svg::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: #ffffff;
+  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+.container__items-svg:hover:before {
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+.container__items-svg:hover svg {
+  fill: #36395A;
+  transition: all 0.3s ease-out;
+}
+.container__items-svg svg {
+  fill: white;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  transition: all 0.3s ease-out;
 }
 
 @media (min-width: 276px) {
@@ -510,7 +562,7 @@ select {
     height: 700px;
   }
   .slider__box {
-    max-width: 900px;
+    max-width: 1000px;
     max-height: 850px;
   }
   .carousel__title {
@@ -539,7 +591,7 @@ select {
     height: 1200px;
   }
   .slider__box {
-    max-width: 1200px;
+    max-width: 1500px;
     max-height: 1150px;
   }
   .butons svg {
